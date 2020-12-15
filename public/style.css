@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+    color: #4e4e4e;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.lobby-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.lobby-container h1 {
+    font-size: 64px;
+}
+
+.btn {
+    padding: 16px 32px;
+    border-radius: 30px;
+    font-size: 32px;
+    color: #fff;
+    border: none;
+    display: block;
+    transition: 0.2s;
+    cursor: pointer;
+    margin-bottom: 32px;
+}
+
+.btn:hover {
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+.new-game {
+    background-color: green;
+}
+
+.new-game:hover {
+    background-color: darkgreen;
+}
+
+.join-game {
+    background-color: blue;
+    margin: auto;
+}
+
+.join-game:hover {
+    background-color: darkblue;
+}
+
+.instructions {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.join-game-form {
+    border-radius: 32px;
+    border: 1px solid #4e4e4e;
+    padding: 32px;
+    text-align: center;
+}
+
+.join-game-form label {
+    font-size: 32px;
+    margin-right: 12px;
+    margin-bottom: 32px;
+    display: inline-block;
+}
+
+.join-input {
+    border: none;
+    border-bottom: 2px solid #4e4e4e;
+    height: 36px;
+    padding-bottom: 4px;
+    font-size: 32px;
+    width: 132px;
+    transition: 0.2s;
+}
+
+.join-input:focus {
+    outline: none;
+    border-bottom: 2px solid #000;
+}
