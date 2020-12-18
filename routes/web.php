@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'LobbyController@index');
+Route::get('/', 'LobbyController@index')->name('lobby');
 Route::get('/game/new', 'GameController@create');
 Route::post('/game/new', 'GameController@new');
 Route::get('/signin', 'GameController@signin');

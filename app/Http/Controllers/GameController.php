@@ -87,11 +87,23 @@ class GameController extends Controller
         $game->current_turn = $game->players->first()->id;
         $game->save();
 
-        $newRequest = new Request();
-        $newRequest->setMethod('POST');
-        $newRequest->request->add(['game' => $game->code, 'player' => $game->players->first()->code]);
+        foreach($game->players as $player) {
+            // Draw player tiles
+            $player->rack = $this->drawTiles($game, 7);
+            $player->save();
+        }
 
-        return $this->play($newRequest);
+        return redirect()->route('lobby', ['gamecode' => $game->code,
+                              'playercode' => $game->players->first()->code,
+                              'gameready' => true]);
+
+        //$newRequest = new Request();
+        //$newRequest->setMethod('POST');
+        //$newRequest->request->add(['game' => $game->code, 
+                                   //'player' => $game->players->first()->code,
+                                   //'gamecode' => $game]);
+
+        //return $this->play($newRequest);
     }
 
     private function generateGameCode() {
